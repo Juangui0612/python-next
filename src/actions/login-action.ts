@@ -1,7 +1,7 @@
 // src/actions/user-action.server.ts  (server action)
 "use server";
 
-const BASE_URL = process.env.API_URL;
+const BASE_URL = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 interface FormData {
   username?: string;
