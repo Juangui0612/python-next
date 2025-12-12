@@ -1,6 +1,7 @@
 "use server";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL
+// ⭐ CAMBIO AQUÍ: Usa API_URL (sin NEXT_PUBLIC_) para server actions
+const BASE_URL = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 interface FormData {
     id_category?: number,
@@ -22,7 +23,6 @@ export const GETCategory = async() => {
     }
 }
 
-
 export const POSTCategory = async(formdata: FormData)=>{
     try {
         const response = await fetch(`${BASE_URL}/api/categories/`,{
@@ -42,7 +42,8 @@ export const POSTCategory = async(formdata: FormData)=>{
 
 export const DELETECategory = async (id_category: number, token:string) => {
   try {
-    const res = await fetch(`${process.env.API_URL}/api/categories/${id_category}/`, {
+    // ⭐ CAMBIO AQUÍ: Usar BASE_URL en vez de process.env.API_URL
+    const res = await fetch(`${BASE_URL}/api/categories/${id_category}/`, {
       method: "DELETE",
        headers:{
                 "Content-Type": "application/json",
@@ -55,7 +56,6 @@ export const DELETECategory = async (id_category: number, token:string) => {
     return { ok: false };
   }
 };
-
 
 export const PUTCategory = async(id_category:number, token: string, updateData: FormData)=>{
     try {
