@@ -71,33 +71,37 @@ export default function ModalProduct({ isOpen, onClose, onProductCreated }: Moda
 
   return (
     <div className="fixed inset-0 bg-gray-900/30 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white p-6 rounded-lg w-80 modal">
+      <div className="bg-white text-black p-6 rounded-lg w-80 modal">
         <h2 className="text-lg font-bold mb-4">Crear producto</h2>
 
         <form onSubmit={onSubmit} className="space-y-3">
 
           <input name="name" placeholder="Nombre"
             value={formData.name} onChange={handleChange}
-            className="w-full border px-2 py-1 rounded" required />
+            className="w-full border px-2 py-1 rounded text-black bg-white"
+ required />
 
           <textarea name="description" placeholder="Descripción"
             value={formData.description} onChange={handleChange}
-            className="w-full border px-2 py-1 rounded" />
+            className="w-full border px-2 py-1 rounded text-black bg-white"
+ />
 
           <input name="price" type="number" placeholder="Precio"
             value={formData.price} onChange={handleChange}
-            className="w-full border px-2 py-1 rounded" required />
+            className="w-full border px-2 py-1 rounded text-black bg-white"
+ required />
 
           <input name="amount" type="number" placeholder="Cantidad"
             value={formData.amount} onChange={handleChange}
-            className="w-full border px-2 py-1 rounded" required />
+            className="w-full border px-2 py-1 rounded text-black bg-white"
+ required />
 
           {/* ✅ SELECT de categorías */}
           <select
             name="id_category"
             value={formData.id_category}
             onChange={handleChange}
-            className="w-full border px-2 py-1 rounded"
+            className="w-full border px-2 py-1 rounded text-black bg-white"
             required
           >
             <option value="">Selecciona una categoría</option>
@@ -109,7 +113,7 @@ export default function ModalProduct({ isOpen, onClose, onProductCreated }: Moda
           </select>
 
           <div className="flex justify-end space-x-2 pt-2">
-            <button type="button" onClick={onClose} className="px-3 py-1 border rounded">
+            <button type="button" onClick={onClose} className="px-3 py-1 border rounded text-black bg-white">
               Cancelar
             </button>
             <button type="submit" className="px-3 py-1 bg-blue-600 text-white rounded">

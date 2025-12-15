@@ -61,7 +61,7 @@ export default function ModalEdit({ isOpen, onClose, category, onUpdate }: Modal
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Nombre</label>
+            <label className="text-black block text-sm font-medium text-gray-700">Nombre</label>
             <input
               value={name}
               onChange={e => setName(e.target.value)}
@@ -71,18 +71,18 @@ export default function ModalEdit({ isOpen, onClose, category, onUpdate }: Modal
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Descripción</label>
+            <label className="text-black block text-sm font-medium text-gray-700">Descripción</label>
             <textarea
               value={description}
               onChange={e => setDescription(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2"
+              className="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2"
               rows={3}
             />
           </div>
 
 
           <div className="flex justify-end gap-2">
-            <button type="button" onClick={onClose} className="px-4 py-2 rounded-md border">
+            <button type="button" onClick={onClose} className="text-black px-4 py-2 rounded-md border">
               Cancelar
             </button>
             <button type="submit" disabled={submitting} className="px-4 py-2 rounded-md bg-blue-600 text-white">

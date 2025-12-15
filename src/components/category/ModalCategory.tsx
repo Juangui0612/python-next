@@ -50,7 +50,7 @@ export default function ModalCategory({ isOpen, onClose, onProductCreated }: Mod
     <>
       {isOpen && (
         <div className="fixed inset-0 bg-gray-900/30 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg w-80 modal" style={{ zIndex: 100 }}>
+          <div className="bg-white text-black p-6 rounded-lg w-80 modal" style={{ zIndex: 100 }}>
             <h2 className="text-lg font-bold mb-4">Crear Categoria</h2>
 
             <form onSubmit={onSubmit} className="space-y-3">
@@ -59,7 +59,7 @@ export default function ModalCategory({ isOpen, onClose, onProductCreated }: Mod
                 placeholder="Nombre"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border px-2 py-1 rounded"
+                className="text-black w-full border px-2 py-1 rounded"
                 required
               />
 
@@ -68,7 +68,7 @@ export default function ModalCategory({ isOpen, onClose, onProductCreated }: Mod
                 placeholder="Descripción"
                 value={formData.description}
                 onChange={handleChange}
-                className="w-full border px-2 py-1 rounded"
+                className="text-black w-full border px-2 py-1 rounded"
               />
 
 
@@ -77,13 +77,13 @@ export default function ModalCategory({ isOpen, onClose, onProductCreated }: Mod
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-3 py-1 border rounded"
+                  className="text-black px-3 py-1 border rounded"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
-                  className="px-3 py-1 bg-blue-600 text-white rounded"
+                  className=" text-black px-3 py-1 bg-blue-600 text-white rounded"
                 >
                   Guardar
                 </button>

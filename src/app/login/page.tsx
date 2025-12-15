@@ -51,7 +51,7 @@ export default function LoginPage() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-            className="w-full border rounded-lg px-3 py-2 mt-1 focus:ring focus:ring-blue-200 outline-none"
+            className="text-black w-full border rounded-lg px-3 py-2 mt-1 focus:ring focus:ring-blue-200 outline-none"
           />
         </div>
 
@@ -64,7 +64,7 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full border rounded-lg px-3 py-2 mt-1 focus:ring focus:ring-blue-200 outline-none"
+            className="text-black w-full border rounded-lg px-3 py-2 mt-1 focus:ring focus:ring-blue-200 outline-none"
           />
         </div>
 
@@ -74,7 +74,7 @@ export default function LoginPage() {
         >
           Entrar
         </button>
-        <p className="text-sm text-center">
+        <p className=" text-black text-sm text-center">
           ¿No tienes cuenta?{" "}
           <a href="/register" className="text-blue-600 hover:underline">Regístrate</a>
         </p>
