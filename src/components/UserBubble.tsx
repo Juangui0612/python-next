@@ -25,64 +25,62 @@ export default function UserBubble() {
     try {
       const payload = jwtDecode<TokenPayload>(token);
       setUsername(payload.username ?? payload.name ?? null);
-    } catch (err) {
-      console.error("Token inválido:", err);
+    } catch {
+      setUsername(null);
     }
   }, []);
 
-  // Close on outside click
   useEffect(() => {
     function onClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
     }
     window.addEventListener("click", onClick);
     return () => window.removeEventListener("click", onClick);
   }, []);
 
   function handleLogout() {
-    // borra cookie y redirige
     deleteCookie("ap_token");
-    // si usas otro nombre para la cookie, borrarlo también
     router.push("/login");
   }
 
   return (
     <div ref={ref} className="relative flex items-center">
-      {/* Circle / bubble */}
+      {/* Avatar */}
       <button
         onClick={() => setOpen(v => !v)}
-        className="relative -mb-6 mr-3 w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-semibold shadow hover:opacity-90"
-        aria-label="User menu"
+        className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold shadow hover:bg-blue-700 transition"
       >
         {initials(username)}
-        {/* small online dot (optional) */}
-        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-white" />
       </button>
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+        <div className="absolute right-0 top-12 w-56 bg-white text-black rounded-xl shadow-xl border z-50">
+          {/* Header */}
           <div className="px-4 py-3 border-b">
-            <div className="text-sm text-gray-700">Conectado como</div>
-            <div className="font-semibold text-gray-900 truncate">{username ?? "Usuario"}</div>
+            <p className="text-xs text-gray-500">Conectado</p>
+            <p className="font-semibold truncate">{username ?? "Usuario"}</p>
           </div>
 
-          <div className="flex flex-col py-1">
+          {/* Actions */}
+          <div className="flex flex-col py-2">
             <button
               onClick={() => {
                 setOpen(false);
-                router.push("/profile"); // opcional: link a profile
+                router.push("/profile");
               }}
-              className="text-left px-4 py-2 hover:bg-gray-100"
+              className="px-4 py-2 text-left hover:bg-gray-100 transition"
             >
-              Ver perfil
+              👤 Ver perfil
             </button>
 
             <button
               onClick={handleLogout}
-              className="text-left px-4 py-2 hover:bg-gray-100 text-red-600"
+              className="px-4 py-2 text-left text-red-600 hover:bg-red-50 transition"
             >
-              Cerrar sesión
+              🚪 Cerrar sesión
             </button>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Package, Layers } from "lucide-react";
+import { Menu, X, Package, Layers, LayoutDashboard } from "lucide-react";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(true);
@@ -28,6 +28,12 @@ export default function Sidebar() {
         <h1 className="text-2xl font-bold mb-8">CrudPython</h1>
 
         <nav className="flex flex-col space-y-4">
+          <Link
+            href="/dashboard"
+            className="flex items-center gap-2 hover:text-blue-400"
+          >
+            <LayoutDashboard size={18} /> Dashboard
+          </Link>
           <Link
             href="/dashboard/category"
             className="flex items-center gap-2 hover:text-blue-400"

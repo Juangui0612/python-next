@@ -144,13 +144,13 @@ export default function Products() {
                                     key={p.id}
                                     className="border-t hover:bg-gray-50 transition"
                                 >
-                                    <td className="px-6 py-3 font-medium text-gray-900">{p.name}</td>
-                                    <td className="px-6 py-3 text-gray-600 truncate max-w-xs">{p.description}</td>
-                                    <td className="px-6 py-3 text-right font-semibold text-green-600">
+                                    <td className="text-black px-6 py-3 font-medium text-gray-900">{p.name}</td>
+                                    <td className="text-black px-6 py-3 text-gray-600 truncate max-w-xs">{p.description}</td>
+                                    <td className="text-black px-6 py-3 text-right font-semibold text-green-600">
                                         ${Number(p.price).toLocaleString('es-CO', { minimumFractionDigits: 0 })}
                                     </td>
-                                    <td className="px-6 py-3 text-center">{p.amount}</td>
-                                    <td className="px-6 py-3 text-center">
+                                    <td className="text-black px-6 py-3 text-center">{p.amount}</td>
+                                    <td className=" text-black px-6 py-3 text-center">
                                         {category.find((c) => Number(c.id_category) === Number(p.category))?.name}
                                     </td>
 
