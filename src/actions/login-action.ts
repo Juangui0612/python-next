@@ -10,7 +10,7 @@ interface FormData {
 
 export const Login = async (formdata: FormData) => {
   try {
-    const response = await fetch(`${BASE_URL}/api/token/`, {
+    const response = await fetch(`${BASE_URL}/api/login/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formdata),
