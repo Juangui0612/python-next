@@ -10,6 +10,7 @@ import UserBubble from "@/components/UserBubble";
 
 
 
+
 interface Products {
     id: number,
     name: string,
@@ -31,6 +32,8 @@ export default function Products() {
     const [createProduct, setCreateProduct] = useState(false) //modal de crear 
     const [editproduct, setEditProduct] = useState(false) //modal de editar
     const [selectproduct, setSelectProduct] = useState<Products | null>(null) //modal de editar
+
+    
 
     const GETProductAPI = async () => {
         try {
@@ -108,13 +111,18 @@ export default function Products() {
             <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold text-gray-800">Lista de Productos</h2>
                 <div className="flex items-center gap-4">
-                    {/* La burbuja se mostrará justo a la izquierda/encima del botón */}
-                    <UserBubble />
+    <UserBubble />
 
-                    <button onClick={() => setCreateProduct(true)} className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">
-                        + Crear Producto
-                    </button>
-                </div>
+    
+
+    <button
+        onClick={() => setCreateProduct(true)}
+        className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700"
+    >
+        + Crear Producto
+    </button>
+</div>
+
             </div>
 
             {/* Modal de creación */}
@@ -123,6 +131,7 @@ export default function Products() {
                 onClose={() => setCreateProduct(false)}
                 onProductCreated={GETProductAPI}
             />
+  
 
             <div className="relative overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                 <table className="w-full text-sm text-left text-gray-700">

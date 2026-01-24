@@ -46,6 +46,12 @@ export default function Sidebar() {
           >
             <Package size={18} /> Productos
           </Link>
+          <Link
+            href="/dashboard/products/importexcel"
+            className="flex items-center gap-2 hover:text-blue-400"
+          >
+            <Package size={18} /> Cargar Excel
+          </Link>
 
           
         </nav>
