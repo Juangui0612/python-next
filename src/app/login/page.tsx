@@ -43,7 +43,7 @@ export default function LoginPage() {
         )}
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-gray-800">
             Usuario
           </label>
           <input
@@ -56,7 +56,7 @@ export default function LoginPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-gray-800">
             Contraseña
           </label>
           <input

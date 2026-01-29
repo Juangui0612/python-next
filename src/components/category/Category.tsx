@@ -117,10 +117,10 @@ export default function Category() {
               category.map((c) => (
                 <tr
                   key={c.id_category}
-                  className="border-t hover:bg-gray-50 transition"
+                  className="border-t hover:bg-gray-300 transition"
                 >
                   <td className="px-6 py-3 font-medium text-gray-900">{c.name}</td>
-                  <td className="px-6 py-3 text-gray-600 truncate max-w-xs">{c.description}</td>
+                  <td className="px-6 py-3 text-gray-900 truncate max-w-xs">{c.description}</td>
 
 
 

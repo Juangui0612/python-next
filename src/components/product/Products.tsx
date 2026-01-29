@@ -8,9 +8,6 @@ import ModalEdit from "./ModalEdit"
 import { Edit, Trash2 } from "lucide-react";
 import UserBubble from "@/components/UserBubble";
 
-
-
-
 interface Products {
     id: number,
     name: string,
@@ -33,7 +30,6 @@ export default function Products() {
     const [editproduct, setEditProduct] = useState(false) //modal de editar
     const [selectproduct, setSelectProduct] = useState<Products | null>(null) //modal de editar
 
-    
 
     const GETProductAPI = async () => {
         try {
@@ -151,10 +147,10 @@ export default function Products() {
                             product.map((p) => (
                                 <tr
                                     key={p.id}
-                                    className="border-t hover:bg-gray-50 transition"
+                                    className="border-t hover:bg-gray-300 transition"
                                 >
                                     <td className="text-black px-6 py-3 font-medium text-gray-900">{p.name}</td>
-                                    <td className="text-black px-6 py-3 text-gray-600 truncate max-w-xs">{p.description}</td>
+                                    <td className="text-black px-6 py-3 text-gray-900 truncate max-w-xs">{p.description}</td>
                                     <td className="text-black px-6 py-3 text-right font-semibold text-green-600">
                                         ${Number(p.price).toLocaleString('es-CO', { minimumFractionDigits: 0 })}
                                     </td>

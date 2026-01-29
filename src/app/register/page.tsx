@@ -55,7 +55,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form onSubmit={handleRegister} className="bg-white shadow-lg p-8 rounded-xl w-96 space-y-4">
-        <h1 className="text-2xl font-bold text-center">Crear cuenta</h1>
+        <h1 className="text-2xl font-bold text-center text-gray-800">Crear cuenta</h1>
 
         {error && <p className="text-sm text-red-600 text-center">{error}</p>}
 
@@ -96,7 +96,7 @@ export default function RegisterPage() {
           <button
             type="button"
             onClick={() => router.push("/login")}
-            className="px-4 py-2 border rounded"
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-500"
           >
             Volver
           </button>

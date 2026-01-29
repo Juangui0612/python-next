@@ -18,7 +18,7 @@ interface ChartData {
 export default function ProductsByCategoryChart({ data }: { data: ChartData[] }) {
   return (
     <div className="bg-white p-4 rounded-xl shadow">
-      <h3 className="text-lg font-semibold mb-4">
+      <h3 className="text-lg font-semibold mb-4 text-gray-800">
         Productos por categoría
       </h3>
 
