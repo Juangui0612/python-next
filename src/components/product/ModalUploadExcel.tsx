@@ -125,14 +125,14 @@ export default function ModalUploadExcel({ onClose, onSuccess }: Props) {
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-40">
         <div className="bg-white rounded-xl p-6 w-96 space-y-4 shadow-lg">
 
-          <h2 className="text-lg font-semibold text-center">
+          <h2 className="text-lg font-semibold text-center text-gray-900">
             Importar productos desde Excel
           </h2>
 
           <select
             value={categoryId}
             onChange={e => setCategoryId(Number(e.target.value))}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 text-gray-900"
           >
             <option value="">Selecciona una categoría</option>
             {categories.map(cat => (
@@ -166,7 +166,7 @@ export default function ModalUploadExcel({ onClose, onSuccess }: Props) {
           <div className="flex justify-end gap-2 pt-2">
             <button
               onClick={onClose}
-              className="px-4 py-2 bg-gray-300 rounded"
+              className="px-4 py-2 bg-gray-300 rounded text-gray-900"
             >
               Cancelar
             </button>
